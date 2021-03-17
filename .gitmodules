@@ -1,0 +1,3 @@
+[submodule "3rdparty/sleepy-discord"]
+	path = 3rdparty/sleepy-discord
+	url = https://github.com/uspasojevic96/sleepy-discord
