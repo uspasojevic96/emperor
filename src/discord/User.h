@@ -1,3 +1,4 @@
+#include <string>
 namespace discord {
     enum class UserFlag {
         None = 0,
@@ -23,6 +24,9 @@ namespace discord {
     };
 
     class User {
-        std
-    }
+        std::string id_;
+
+        public:
+        User(std::string const& _id) : id_{_id} {}
+    };
 }
