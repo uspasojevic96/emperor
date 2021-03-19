@@ -1,4 +1,7 @@
 #include <string>
+#include <optional>
+#include <nlohmann/json.hpp>
+
 namespace discord {
     enum class UserFlag {
         None = 0,
@@ -17,6 +20,10 @@ namespace discord {
         EarlyVerifiedBotDeveloper = 1 << 17
     };
 
+    enum class Field {
+        
+    };
+
     enum class PremiumType {
         None = 0,
         NitroClassic = 1,
@@ -24,9 +31,23 @@ namespace discord {
     };
 
     class User {
-        std::string id_;
+        private:
+        std::optional<std::string>  id_             = std::nullopt;
+        std::optional<std::string>  username_       = std::nullopt;
+        std::optional<std::string>  discriminator_  = std::nullopt;
+        std::optional<std::string>  avatar_         = std::nullopt;
+        std::optional<bool>         bot_            = std::nullopt;
+        std::optional<bool>         system_         = std::nullopt;
+        std::optional<bool>         mfaEnabled_     = std::nullopt;
+        std::optional<std::string>  locale_         = std::nullopt;
+        std::optional<bool>         verified_       = std::nullopt;
+        std::optional<std::string>  email_          = std::nullopt;
+        std::optional<UserFlag>     flags_          = std::nullopt;
+        std::optional<PremiumType>  premiumType_    = std::nullopt;
+        std::optional<UserFlag>     publicFlags_    = std::nullopt;
 
         public:
-        User(std::string const& _id) : id_{_id} {}
+        User() = default;
+        User fromJSON(nlohmann::json const& _json);
     };
 }
