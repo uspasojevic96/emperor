@@ -1,7 +1,9 @@
 set(discord_SOURCE
-    Client.cpp Client.h
-    User.cpp User.h
-    Role.cpp Role.h
+    Client.cpp      Client.h
+    Emoji.cpp       Emoji.h
+    Role.cpp        Role.h
+    RoleTags.cpp    RoleTags.h
+    User.cpp        User.h
 )
 
 add_library(discord ${discord_SOURCE})
